@@ -18,10 +18,9 @@ Make sure Python is installed
 Modify the autoreset script to use the pin that you wired up to the reset pin.  See the line in
 autoreset where we do "pin = 4" and change the 4 to your gpio pin number.
 
-Copy both files into your /usr/local/bin directory, renaming avrdude-autoreset into avrdude.
+Copy both files into your /usr/local/bin directory.
 
-    $sudo cp autoreset /usr/local/bin
-    $sudo cp avrdude-autoreset /usr/local/bin/avrdude
+    $sudo cp autoreset avrdude /usr/local/bin
 
 Now when you run avrdude from anywhere (including via arduino's normal UI) it will flag dtr when
 it is about to upload hex data.
