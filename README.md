@@ -9,23 +9,22 @@ as if your serial cable actually had a dtr pin.
 Instructions:
 -------------
 
-Copy both files into your /usr/bin directory, then rename the original avrdude to avrdude-original
-and symlink avrdude-autoreset to become avrdude.
+Make sure Python is installed
 
-    cp autoreset /usr/bin
-    cp avrdude-autoreset /usr/bin
-    mv /usr/bin/avrdude /usr/bin/avrdude-original
-    ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
+    $sudo apt-get update
+    $sudo apt-get install python-dev
+    $sudo apt-get install python-rpi.gpio
 
 Modify the autoreset script to use the pin that you wired up to the reset pin.  See the line in
 autoreset where we do "pin = 4" and change the 4 to your gpio pin number.
+
+Copy both files into your /usr/local/bin directory, renaming avrdude-autoreset into avrdude.
+
+    $sudo cp autoreset /usr/local/bin
+    $sudo cp avrdude-autoreset /usr/local/bin/avrdude
 
 Now when you run avrdude from anywhere (including via arduino's normal UI) it will flag dtr when
 it is about to upload hex data.
 
 http://www.deanmao.com/2012/08/12/fixing-the-dtr-pin/
 
-Make sure Python is installed
-$sudo apt-get update
-$sudo apt-get install python-dev
-$sudo apt-get install python-rpi.gpio
