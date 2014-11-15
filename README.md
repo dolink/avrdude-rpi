@@ -16,7 +16,7 @@ Make sure Python is installed
     $sudo apt-get install python-rpi.gpio
 
 Modify the autoreset script to use the pin that you wired up to the reset pin.  See the line in
-autoreset where we do "pin = 4" and change the 4 to your gpio pin number.
+autoreset where we do "pin = 23" and change the 23 to your gpio pin number.
 
 Copy both files into your /usr/local/bin directory.
 
